@@ -1,0 +1,26 @@
+{
+  "name": "files-uris",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "build": "RMDIR /Q/S dist & webpack",
+    "test": "jest --WatchAll --Verbose --Coverage --detectOpenHandles",
+    "debug": "npm test"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "aws-sdk": "2.483.0",
+    "axios": "0.19.0",
+    "couchbase": "2.6.4",
+    "sleep": "^6.1.0"
+  },
+  "devDependencies": {
+    "webpack": "4.35.0",
+    "webpack-cli": "3.3.5",
+    "copy-webpack-plugin": "5.0.3",
+    "jest": "24.8.0"
+  },
+  "description": ""
+}
