@@ -1,5 +1,5 @@
 {
-  "name": "files-uris-dead-letter",
+  "name": "files-uris",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {

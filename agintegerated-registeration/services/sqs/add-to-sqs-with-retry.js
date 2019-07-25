@@ -72,10 +72,11 @@ async function add_to_SQS_with_retry(
   } else if (messages.length > 1) {
     sqsDelayRecieve = 0; //900
 
-    messages.forEach(async message => {
+    //messages.forEach(async message => {
+    for (i in messages) {
       try {
         result = await add_one_message_to_SQS_with_retry(
-          message,
+          messages[i],
           attributes,
           queueName,
           sqsDelayRecieve,
@@ -87,7 +88,7 @@ async function add_to_SQS_with_retry(
         // Throw error and exit from foreach
         throw error;
       }
-    });
+    }
   }
 }
 

@@ -4,10 +4,10 @@
       "messageId": "19dd0b57-b21e-4ac1-bd88-01bbb068cb78",
       "receiptHandle": "MessageReceiptHandle",
       "body": {
-        "dataSource": "DataSource-457aa9aa-561f-4ef1-b76f-66348961ebdb",
-        "agIntegratedStubKey": "dacfd8b4-f6af-4779-bd99-f1864630515c",
+        "landdbUserEmail": "rick.murdock@agconnections.com",
+        "agIntegratedStubKey": "7484aaa8-6cb1-4669-9fa7-237f9473481a",
         "jobId": 11,
-        "startDateTime": "2019-06-24T11:45:22.02Z"
+        "startDateTime": "6/17/2019"
       },
       "attributes": {
         "ApproximateReceiveCount": "1",

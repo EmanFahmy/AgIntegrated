@@ -15,6 +15,13 @@ module.exports = {
     "aws-sdk": "aws-sdk"
   },
   plugins: [
-    new CopyWebpackPlugin([{ from: "package.json", to: "package.json" }])
+    new CopyWebpackPlugin([
+      {
+        //from: "node_modules/couchbase/build/Release/couchbase_impl.node",
+        from: "native-modules/linux/couchbase_impl.node",
+        to: "build/Release/couchbase_impl.node"
+      },
+      { from: "package.json", to: "package.json" }
+    ])
   ]
 };

@@ -1,5 +1,5 @@
 {
-  "name": "files-uris-dead-letter",
+  "name": "agintegerated-registeration",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
@@ -12,9 +12,7 @@
   "license": "ISC",
   "dependencies": {
     "aws-sdk": "2.483.0",
-    "axios": "0.19.0",
-    "couchbase": "2.6.4",
-    "sleep": "^6.1.0"
+    "couchbase": "2.6.4"
   },
   "devDependencies": {
     "webpack": "4.35.0",

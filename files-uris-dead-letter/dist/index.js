@@ -111,11 +111,11 @@ exports.handler = async event => {
     //let messageBody = JSON.parse(event.Records[0].body);
     let messageBody = event.Records[0].body;
     let agIntegratedStubKey = messageBody.agIntegratedStubKey;
-    let landdbUserEmail = messageBody.landdbUserEmail;
+    let dataSource = messageBody.dataSource;
     let jobId = messageBody.jobId;
     let startDateTime = messageBody.startDateTime;
 
-    funcParams = { landdbUserEmail, agIntegratedStubKey, jobId, startDateTime };
+    funcParams = { dataSource, agIntegratedStubKey, jobId, startDateTime };
 
     // validate params are not missing
 
@@ -157,14 +157,14 @@ function validateEvent(event) {
 async function validateParams(params) {
   if (
     !(
-      params.landdbUserEmail &&
+      params.dataSource &&
       params.agIntegratedStubKey &&
       params.jobId &&
       params.startDateTime
     )
   ) {
     let errormessage =
-      "missing one or more of event paramaters (landdbUserEmail, agIntegratedStubKey, jobId, startDateTime)";
+      "missing one or more of event paramaters (dataSource, agIntegratedStubKey, jobId, startDateTime)";
 
     await Logger.failure(STEP, errormessage, params);
 

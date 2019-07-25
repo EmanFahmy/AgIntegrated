@@ -1,14 +1,14 @@
 "use strict";
 
+const filesURIs = require("./files-uris/files-uris-handler");
 const FailureError = require("./shared/custom-errors");
 const Logger = require("./shared/logger");
-let STEP = "";
+const STEP = "Event Validation";
 
 exports.handler = async event => {
   let funcParams;
   try {
     // validate that event is sqs event
-    STEP = "Event Validation";
     validateEvent(event);
 
     //Get user stub key from SQS
@@ -21,13 +21,9 @@ exports.handler = async event => {
 
     funcParams = { dataSource, agIntegratedStubKey, jobId, startDateTime };
 
-    // validate params are not missing
+    // ToDo validate params are not missing
 
-    STEP = "Validate Parameters";
-    await validateParams(funcParams);
-
-    STEP = "Step 2 get file uri fall in dead letter";
-    throw new FailureError("get file uri fall in dead letter queue");
+    await filesURIs(funcParams);
   } catch (exception) {
     if (exception instanceof FailureError) {
       await Logger.failure(
@@ -55,23 +51,5 @@ function validateEvent(event) {
     )
   ) {
     throw new FailureError("invalid event.");
-  }
-}
-
-async function validateParams(params) {
-  if (
-    !(
-      params.dataSource &&
-      params.agIntegratedStubKey &&
-      params.jobId &&
-      params.startDateTime
-    )
-  ) {
-    let errormessage =
-      "missing one or more of event paramaters (dataSource, agIntegratedStubKey, jobId, startDateTime)";
-
-    await Logger.failure(STEP, errormessage, params);
-
-    throw new FailureError(errormessage);
   }
 }
