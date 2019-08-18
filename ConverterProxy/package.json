@@ -1,0 +1,23 @@
+{
+  "name": "onsite-users",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "RMDIR /Q/S dist & webpack",
+    "test": "jest --verbose --detectOpenHandles ./tests"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "copy-webpack-plugin": "5.0.3",
+    "jest": "24.8.0",
+    "webpack": "4.34.0",
+    "webpack-cli": "3.3.3"
+  },
+  "dependencies": {
+    "aws-sdk": "2.474.0",
+    "couchbase": "2.6.4"
+  }
+}
